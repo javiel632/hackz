@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DARK TECH HACK</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #0f0;
+      font-family: monospace;
+      padding: 20px;
+    }
+    #login, #hacking {
+      display: none;
+    }
+    .center {
+      max-width: 400px;
+      margin: auto;
+    }
+    input {
+      background: #111;
+      color: #0f0;
+      border: 1px solid #0f0;
+      padding: 10px;
+      width: 100%;
+      margin: 10px 0;
+    }
+    button {
+      padding: 10px;
+      width: 100%;
+      background: #0f0;
+      color: #000;
+      font-weight: bold;
+      border: none;
+      cursor: pointer;
+    }
+    .terminal {
+      background: #111;
+      padding: 10px;
+      margin-top: 20px;
+      height: 200px;
+      overflow: auto;
+      border: 1px solid #0f0;
+    }
+  </style>
+</head>
+<body onload="document.getElementById('login').style.display='block'">
+  <div id="login" class="center">
+    <h2>Login Required</h2>
+    <input type="text" id="username" placeholder="Username">
+    <input type="password" id="password" placeholder="Password">
+    <button onclick="checkLogin()">Login</button>
+    <p id="error" style="color:red;"></p>
+  </div>
+
+  <div id="hacking" class="center">
+    <h2>WI-FI HACK WITH DARK TECH</h2>
+    <button onclick="startHack()">Start Hacking</button>
+    <div class="terminal" id="terminal"></div>
+  </div>
+
+  <script>
+    function checkLogin() {
+      const user = document.getElementById('username').value;
+      const pass = document.getElementById('password').value;
+      if (user === "dark tech" && pass === "Jayden official") {
+        document.getElementById('login').style.display = 'none';
+        document.getElementById('hacking').style.display = 'block';
+      } else {
+        document.getElementById('error').innerText = "Invalid credentials!";
+      }
+    }
+
+    function startHack() {
+      const terminal = document.getElementById("terminal");
+      terminal.innerHTML = "";
+      let lines = [
+        "[+] Scanning for nearby networks...",
+       
+        
+        
+        "[+] Found: Home_WiFi_24GHz",
+        
+        
+        
+        "[+] Attempting handshake capture...",
+        
+        
+        
+        "[+] Handshake captured!",
+        
+        
+        
+        "[+] Cracking password (brute force)...",
+        
+        
+        
+        "[+] Password found: check on your user_key",
+       
+        
+        
+        "[+] Access granted!",
+        
+        
+        
+        "[+] You are now connected!"
+      ];
+      let i = 0;
+      let interval = setInterval(() => {
+        if (i < lines.length) {
+          terminal.innerHTML += lines[i] + "<br>";
+          terminal.scrollTop = terminal.scrollHeight;
+          i++;
+        } else {
+          clearInterval(interval);
+        }
+      }, 1000);
+    }
+  </script>
+</body>
+</html>
